@@ -1,0 +1,82 @@
+$text-color: #333333;
+html {
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #333366;
+    background-color: #c8e8cf;
+    max-width: 1600px;
+}
+@mixin flex($align: flex-start, $justify: flex-start, $wrap: nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+.wrapper {
+    margin: 120px;
+    max-width: 1360px;
+    background-color: #f6f6f4;
+    padding-left: 140px;
+    padding-right: 135px;
+}
+.container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1070px;
+}
+.header {
+    padding-top: 60px;
+    &__inner {
+        @include flex(center, space-between);
+    }
+    &__menu {
+        &-list {
+            @include flex(center);
+        }
+        &-item {
+            margin-left: 4rem;
+            &:first-child {
+                margin-left: 7rem;
+            }
+            &:last-child {
+                margin-left: 18rem;
+            }
+        }
+        &-link {
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: $text-color;
+        }
+    }
+    &__logo {
+        font-size: 1.8rem;
+        &-text {
+            font-weight: 600;
+        }
+    }
+}
+.btn {
+    background-color: white;
+    padding: 1.5rem 2rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+}

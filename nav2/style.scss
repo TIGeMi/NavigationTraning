@@ -1,0 +1,80 @@
+html {
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #000033;
+}
+@mixin flex ($align: flex-start, $justify: flex-start, $wrap: nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+// 1440 1240
+.wrapper {
+    margin: 0 auto;
+    max-width: 1440px;
+    background-color: #000033;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.header {
+    &__logo {
+        &-text {
+            color: white;
+            font-size: 2.4rem;
+            font-weight: 400;
+        }
+    }
+    &__inner {
+        padding-top: 25px;
+        @include flex(center, space-between)
+    }
+    &__menu {
+        &-list {
+            @include flex(center,flex-end)
+        }
+        &-item {
+            &:last-child {
+                margin-right: 0px;
+            }
+            margin-right: 40px;
+            transition: .25s linear ;
+        }
+        &-link {
+            text-decoration: none;
+            font-size: 1.6rem;
+            color: #663399;
+            &:last-child {
+                color: white;
+            }
+        }
+    }
+}
+.btn {
+    padding: 20px 25px;
+    background-color: #333399;
+    border-radius: 1rem;
+}
